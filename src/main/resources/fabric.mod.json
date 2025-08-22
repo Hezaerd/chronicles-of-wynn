@@ -1,0 +1,26 @@
+{
+	"schemaVersion": 1,
+	"id": "cow",
+	"version": "${version}",
+	"name": "Chronicles of Wynn",
+	"description": "Utility mod for Chronicles of Wynn modpack.",
+	"authors": ["Hezaerd"],
+	"contact": {
+		"homepage": "https://hezaerd.com",
+		"sources": "https://github.com/hezaerd/chronicles-of-wynn"
+	},
+	"license": "MIT",
+	"icon": "assets/cow/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": ["com.hezaerd.ChroniclesOfWynn"],
+		"client": ["com.hezaerd.ChroniclesOfWynnClient"],
+		"fabric-datagen": ["com.hezaerd.ChroniclesOfWynnDataGenerator"]
+	},
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
