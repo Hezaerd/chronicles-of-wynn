@@ -37,6 +37,18 @@ fabricApi {
 }
 
 repositories {
+	exclusiveContent {
+		forRepository {
+			maven {
+				name = "Modrinth"
+				url = "https://api.modrinth.com/maven"
+			}
+		}
+		filter {
+			includeGroup "maven.modrinth"
+		}
+	}
+	
 	maven { url = "https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1" }
 }
 
@@ -45,13 +57,15 @@ dependencies {
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${devauth_version}")
+	modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${project.devauth_version}")
 	
 	// Fabric API
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
 	
-}
+	modImplementation "maven.modrinth:Wq5SjeWM:${project.fancy_menu_version}"
+	modImplementation "maven.modrinth:J81TRJWm:${project.konkrete_version}"
+	modImplementation "maven.modrinth:CVT4pFB2:${project.melody_version}"
+}	
 
 processResources {
 	inputs.property "version", project.version
